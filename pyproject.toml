@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "rangemax"
+version = "0.1.0"
+description = "EV Range Optimizer - predict and maximize electric vehicle range"
+authors = [
+    { name = "Mukunda Katta" },
+]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pydantic>=2.0",
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.scripts]
+rangemax = "rangemax.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
